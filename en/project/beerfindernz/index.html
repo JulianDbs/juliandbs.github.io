@@ -8,7 +8,7 @@
         <title>BeerFinderNZ</title>
     </head>
     <body>
-        <header th:fragment="project__header" class="project__header" id="header-bar">
+        <header class="project__header" id="header-bar">
             <h1 class="project-header__h1">BeerFinderNZ</h1>
         </header>
         <nav class="project__nav" id="nav-bar">
@@ -125,11 +125,49 @@
                             </picture>
                         </div>
                         <button class="project-article-div-ig__button-r" id="project-article-div-ig-button-r"> '>' </button>
-                        <script th:replace="fragments/script :: project-ig__script"></script>
+                        <script>
+                            let imageCount = 0;
+                            const igButtonL = document.getElementById("project-article-div-ig-button-l");
+                            const imageList = [
+                                document.getElementById("product-article-div-ig-div-image-picture-0"),
+                                document.getElementById("product-article-div-ig-div-image-picture-1"),
+                                document.getElementById("product-article-div-ig-div-image-picture-2"),
+                                document.getElementById("product-article-div-ig-div-image-picture-3"),
+                                document.getElementById("product-article-div-ig-div-image-picture-4"),
+                                document.getElementById("product-article-div-ig-div-image-picture-5"),
+                                document.getElementById("product-article-div-ig-div-image-picture-6"),
+                                document.getElementById("product-article-div-ig-div-image-picture-7"),
+                                document.getElementById("product-article-div-ig-div-image-picture-8"),
+                                document.getElementById("product-article-div-ig-div-image-picture-9"),
+                                document.getElementById("product-article-div-ig-div-image-picture-10")
+                            ];
+                            igButtonL.addEventListener("click", function() {
+                                if (imageCount > 0) {
+                                    imageCount -= 1;
+                                    showImageOnGallery(imageCount);
+                                }
+                            });
+                            const igButtonR = document.getElementById("project-article-div-ig-button-r");
+                            igButtonR.addEventListener("click", function() {
+                                if (imageCount < 10) {
+                                    imageCount += 1;
+                                    showImageOnGallery(imageCount);
+                                }
+                            });
+                            function showImageOnGallery(imageNumber) {
+                                for (let i = 0; i < imageList.length; i++) {
+                                    if (i == imageNumber) {
+                                        imageList[i].style.display = "flex";
+                                    } else {
+                                        imageList[i].style.display = "none";
+                                    }
+                                }
+                            }
+                        </script>
                     </div>
                     <div class="project-article__div-info">
                         <div class="project-article-div-info__div-links">
-                            <a class="social-links-article__a" th:href="#{lang.project.beerfindernz.github-link}">
+                            <a class="social-links-article__a" href="https://github.com/JulianDbs/BeerFinderNZ">
                                 <img class="social-links-article__img" src="/logos/github-logo.png" style="width: 80px; height: 80px;">
                             </a>
                         </div>
@@ -138,8 +176,46 @@
                 </article>
             </section>
         </main>
-        <footer th:replace="fragments/footer :: project__footer"></footer>
-        <script th:replace="fragments/script :: project-nav-bar__script"></script>
-        <script th:replace="fragments/script :: theme__script"></script>
+        <footer class="project__footer">
+            <div class="project-footer__div">
+                <p class="project-footer__p">Developed by JulianDbs</p>
+            </div>
+        </footer>
+
+        <script>
+            const button = document.getElementById("project-nav-bar-ul-mobile-button");
+            const menuMobile = document.getElementById("project-nav-ul-mobile-menu");
+            const menuMobileBackground = document.getElementById("project-nav-ul-mobile-menu-background");
+            button.addEventListener("click", function() {
+                button.classList.toggle("ul-mobile__pressed");
+                menuMobile.classList.toggle("show-mobile-menu");
+                menuMobileBackground.classList.toggle("show-mobile-menu");
+            });
+            function closeMobileMenu() {
+                button.classList.toggle("ul-mobile__pressed");
+                menuMobile.classList.toggle("show-mobile-menu");
+                menuMobileBackground.classList.toggle("show-mobile-menu");
+            }
+        </script>
+        
+        <script>
+            window.onload = function() {
+                const currentTheme = localStorage.getItem("theme");
+                if (currentTheme == null ||  currentTheme != "dark" && currentTheme != "light") {
+                    localStorage.setItem("theme", "light");
+                }
+                switch (localStorage.getItem("theme")) {
+                    case "dark":
+                        document.body.classList.toggle("dark-theme");
+                        break;
+                    case "light":
+                        document.body.classList.toggle("light-theme");
+                        break;
+                    default:
+                        document.body.classList.toggle("dark-theme");
+                        break;                        
+                }
+            };
+        </script>
     </body>
 </html>
