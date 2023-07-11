@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="color-scheme" content="light dark"></meta>
         <link href="/styles/style.css" rel="stylesheet" type="text/css">
         <link href="/icons/icon.png" rel="icon" type="image/png">
         <title>Portfolio</title>
@@ -191,7 +192,7 @@
                 </div>
                 <div class="projects-section__div">
                     <article class="home-section__article home-projects__article">
-                        <a href="/project/BeerFinderNZ" class="home-projects-article__a">
+                        <a href="/en/project/beerfindernz/" class="home-projects-article__a">
                             <h1 class="projects-article__h1" >BeerfinderNZ</h1>
                             <picture class="projects-article__picture">
                                 <img class="projects-article__img" src="/logos/beerfindernz-logo.png" style="width: 800px; height: auto;">
@@ -199,7 +200,7 @@
                         </a>
                     </article>
                     <article class="home-section__article home-projects__article">
-                        <a href="/project/ShareYourFiles" class="home-projects-article__a">
+                        <a href="/en/project/shareyourfiles/" class="home-projects-article__a">
                             <h1 class="projects-article__h1">ShareYourFiles</h1>
                             <picture class="projects-article__picture">
                                 <img class="projects-article__img" src="/logos/share-your-files-logo.png" style="width: 800px; height: auto;">
@@ -215,7 +216,7 @@
                 </div>
                 <div class="jobs-section__div">
                     <article class="home-section__article home-jobs__article">
-                        <a href="/job/TeoStore" class="home-jobs-article__a">
+                        <a href="/en/job/teostore/" class="home-jobs-article__a">
                             <h1 class="jobs-article__h1">TeoStore</h1>
                             <picture class="jobs-article__picture">
                                 <img class="projects-article__img" src="/logos/teostore-logo.png" style="width: 800px; height: auto;">
@@ -223,7 +224,7 @@
                         </a>
                     </article>
                     <article class="home-section__article home-jobs__article">
-                        <a href="/job/StoreProductTable" class="home-jobs-article__a">
+                        <a href="/en/job/storeproducttable/" class="home-jobs-article__a">
                             <h1 class="jobs-article__h1">StoreProductTable</h1>
                             <picture class="jobs-article__picture">
                                 <img class="projects-article__img" src="/logos/store-product-table-logo.png" style="width: 800px; height: 450px;">
@@ -255,6 +256,22 @@
                 <p class="home-footer__p">Developed by JulianDbs</p>
             </div>
         </footer>
+        <script>
+            const button = document.getElementById("home-nav-bar-ul-mobile-button");
+            const menuMobile = document.getElementById("home-nav-ul-mobile-menu");
+            const menuMobileBackground = document.getElementById("home-nav-ul-mobile-menu-background");
+            button.addEventListener("click", function() {
+                button.classList.toggle("ul-mobile__pressed");
+                menuMobile.classList.toggle("show-mobile-menu");
+                menuMobileBackground.classList.toggle("show-mobile-menu");
+            });
+            function closeMobileMenu() {
+                button.classList.toggle("ul-mobile__pressed");
+                menuMobile.classList.toggle("show-mobile-menu");
+                menuMobileBackground.classList.toggle("show-mobile-menu");
+            }
+        </script>
+
         <script>
             window.onload = function() {
                 const currentTheme = localStorage.getItem("theme");
