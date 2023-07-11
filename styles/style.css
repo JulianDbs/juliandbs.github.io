@@ -504,6 +504,7 @@ header, section, article, div {
 }
 
 .projects-section__div {
+    margin: auto 0;
     display: grid;
     grid-template-columns: auto auto;
     justify-content: center;
@@ -660,11 +661,16 @@ header, section, article, div {
     min-height: 150px;
 }
 
+.contact__section {
+    min-height: calc(100vh - calc( var(--header-height) + var(--nav-height) + var(--footer-height) ) - 140px );
+}
+
 .social-links__article {
     padding: 10px 50px;
     width: 700px;
-    margin: 0 auto;
+    margin: 20px auto 0 auto;
 }
+
 
 .social-links-article__h1 {
     background-color: var(--background-primary-color);
