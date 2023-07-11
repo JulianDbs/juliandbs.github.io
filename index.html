@@ -11,5 +11,15 @@
         <h1>Testing</h1>
     </main>
     <footer></footer>
+    <script>
+        window.onload = ()=> {
+            const lang = navigator.language.toLowerCase();
+            if (lang.startsWith("es")) {
+                window.location.replace("/es/index.html");
+            } else {
+                window.location.replace("/en/index.html");
+            }
+        };
+    </script>
 </body>
 </html>
