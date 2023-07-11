@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="color-scheme" content="light dark"></meta>
+        <link href="/styles/style.css" rel="stylesheet" type="text/css">
+        <link href="/icons/icon.png" rel="icon" type="image/png">
+        <title>BeerFinderNZ</title>
+    </head>
+    <body>
+        <header th:fragment="project__header" class="project__header" id="header-bar">
+            <h1 class="project-header__h1">BeerFinderNZ</h1>
+        </header>
+        <nav class="project__nav" id="nav-bar">
+            <ul class="project-nav__ul">
+                <button class="project-nav__b" style="width:40px; height:40px;" id="project-nav-theme-button"></button>
+                <hr class="project-nav__hr"/>
+                <a href="/en/" class="home-nav__a">Home</a>
+                <hr class="project-nav__hr"/>
+                <div class="project-nav__div-lang">
+                    <a class="project-nav__a-lang" href="/en/project/beerfindernz/">english</a>
+                    <p class="project-nav__p-lang"> | </p>
+                    <a class="project-nav__a-lang" href="/es/project/beerfindernz/">spanish</a>
+                </div>
+            </ul>
+            <ul class="project-nav__ul-mobile" style="display: none;">
+                <button class="project-nav-mobile__b" style="width:40px; height:40px;" id="project-nav-mobile-theme-button"></button>
+                <div class="project-nav-mobile__div-lang">
+                    <a class="project-nav-mobile__a-lang" href="/en/project/beerfindernz/">english</a>
+                    <p class="project-nav-mobile__p-lang"> | </p>
+                    <a class="project-nav-mobile__a-lang" href="/es/project/beerfindernz/">spanish</a>
+                </div>
+                <div class="project-nav-ul-mobile__div-b" id="project-nav-bar-ul-mobile-button">
+                    <p class="project-nav-ul-mobile__p">| | |</p>
+                </div>
+                <div class="project-nav-ul-mobile__div-background" style="display: none;" id="project-nav-ul-mobile-menu-background" onclick="closeMobileMenu()"></div>
+                <div class="project-nav-ul-mobile__div" style="display: none;" id="project-nav-ul-mobile-menu">
+                    <a href="/en/" class="project-nav-ul-mobile__a" onclick="closeMobileMenu()">Home</a>
+                </div>
+                <script>
+                    const navBar = document.getElementById("nav-bar");
+                    const navBarOffset = navBar.offsetTop;
+                    window.onscroll = function() {
+                        if (window.pageYOffset >  navBarOffset) {
+                            navBar.classList.add("sticky-nav-bar");
+                        } else {
+                            navBar.classList.remove("sticky-nav-bar");
+                        }
+                    };
+                    const themeButton = document.getElementById("project-nav-theme-button");
+                    themeButton.addEventListener("click", function() {
+                        let currentTheme = localStorage.getItem("theme");
+                        switch (currentTheme) {
+                            case "dark":
+                                localStorage.setItem("theme", "light");
+                                location.reload();
+                                break;
+                            case "light":
+                                localStorage.setItem("theme", "dark");
+                                location.reload();
+                                break;
+                        }
+                    });
+                    const mobileThemeButton = document.getElementById("project-nav-mobile-theme-button");
+                    mobileThemeButton.addEventListener("click", function() {
+                        let currentTheme = localStorage.getItem("theme");
+                        switch (currentTheme) {
+                            case "dark":
+                                localStorage.setItem("theme", "light");
+                                location.reload();
+                                break;
+                            case "light":
+                                localStorage.setItem("theme", "dark");
+                                location.reload();
+                                break;
+                        }
+                    });
+                </script>
+            </ul>
+        </nav>
+        <main class="project__main">
+            <section class="project__section">
+                <article class="project__article">
+                    <div class="project-article__div">
+                        <picture class="project-article-div__picture-logo">
+                            <img class="project-article-div__img-logo" src="/logos/beerfindernz-logo.png" style="width:800px; height: 450px;">
+                        </picture>
+                        <h1 class="project-article__h1">BeerFinderNZ</h1>
+                    </div>
+                    <div class="project-article__div-ig">
+                        <button class="project-article-div-ig__button-l" id="project-article-div-ig-button-l"> '<' </button>
+                        <div class="project-article-div-ig__div-image">
+                            <picture class="project-article-div-ig-div-image__picture" id="product-article-div-ig-div-image-picture-0">
+                                <img class="project-article-div-ig-div-image__img" style="width: 1336px; height: auto;" src="/screenshots/beerfindernz-0.jpg">
+                            </picture>
+                            <picture class="project-article-div-ig-div-image__picture" style="display:none;" id="product-article-div-ig-div-image-picture-1">
+                                <img class="project-article-div-ig-div-image__img" style="width: 1336px; height: auto;" src="/screenshots/beerfindernz-1.jpg">
+                            </picture>
+                            <picture class="project-article-div-ig-div-image__picture" style="display:none;" id="product-article-div-ig-div-image-picture-2">
+                                <img class="project-article-div-ig-div-image__img" style="width: 1336px; height: auto;" src="/screenshots/beerfindernz-2.jpg">
+                            </picture>
+                            <picture class="project-article-div-ig-div-image__picture" style="display:none;" id="product-article-div-ig-div-image-picture-3">
+                                <img class="project-article-div-ig-div-image__img" style="width: 1336px; height: auto;" src="/screenshots/beerfindernz-3.jpg">
+                            </picture>
+                            <picture class="project-article-div-ig-div-image__picture" style="display:none;" id="product-article-div-ig-div-image-picture-4">
+                                <img class="project-article-div-ig-div-image__img" style="width: 1336px; height: auto;" src="/screenshots/beerfindernz-4.jpg">
+                            </picture>
+                            <picture class="project-article-div-ig-div-image__picture" style="display:none;" id="product-article-div-ig-div-image-picture-5">
+                                <img class="project-article-div-ig-div-image__img" style="width: 1336px; height: auto;" src="/screenshots/beerfindernz-5.jpg">
+                            </picture>
+                            <picture class="project-article-div-ig-div-image__picture" style="display:none;" id="product-article-div-ig-div-image-picture-6">
+                                <img class="project-article-div-ig-div-image__img" style="width: 1336px; height: auto;" src="/screenshots/beerfindernz-6.jpg">
+                            </picture>
+                            <picture class="project-article-div-ig-div-image__picture" style="display:none;" id="product-article-div-ig-div-image-picture-7">
+                                <img class="project-article-div-ig-div-image__img" style="width: 1336px; height: auto;" src="/screenshots/beerfindernz-7.jpg">
+                            </picture>
+                            <picture class="project-article-div-ig-div-image__picture" style="display:none;" id="product-article-div-ig-div-image-picture-8">
+                                <img class="project-article-div-ig-div-image__img" style="width: 1336px; height: auto;" src="/screenshots/beerfindernz-8.jpg">
+                            </picture>
+                            <picture class="project-article-div-ig-div-image__picture" style="display:none;" id="product-article-div-ig-div-image-picture-9">
+                                <img class="project-article-div-ig-div-image__img" style="width: 1336px; height: auto;" src="/screenshots/beerfindernz-9.jpg">
+                            </picture>
+                            <picture class="project-article-div-ig-div-image__picture" style="display:none;" id="product-article-div-ig-div-image-picture-10">
+                                <img class="project-article-div-ig-div-image__img" style="width: 1336px; height: auto;"src="/screenshots/beerfindernz-10.jpg">
+                            </picture>
+                        </div>
+                        <button class="project-article-div-ig__button-r" id="project-article-div-ig-button-r"> '>' </button>
+                        <script th:replace="fragments/script :: project-ig__script"></script>
+                    </div>
+                    <div class="project-article__div-info">
+                        <div class="project-article-div-info__div-links">
+                            <a class="social-links-article__a" th:href="#{lang.project.beerfindernz.github-link}">
+                                <img class="social-links-article__img" src="/logos/github-logo.png" style="width: 80px; height: 80px;">
+                            </a>
+                        </div>
+                        <p class="project-article-div-info__p">Project description here</p>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <footer th:replace="fragments/footer :: project__footer"></footer>
+        <script th:replace="fragments/script :: project-nav-bar__script"></script>
+        <script th:replace="fragments/script :: theme__script"></script>
+    </body>
+</html>
