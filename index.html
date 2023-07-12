@@ -8,9 +8,28 @@
     <hader></hader>
     <nav></nav>
     <main>
-        <h1>Testing</h1>
+        <h1>Loading language ...</h1>
     </main>
     <footer></footer>
+    <script>
+        window.onload = function() {
+            const currentTheme = localStorage.getItem("theme");
+            if (currentTheme == null ||  currentTheme != "dark" && currentTheme != "light") {
+                localStorage.setItem("theme", "light");
+            }
+            switch (localStorage.getItem("theme")) {
+                case "dark":
+                    document.body.classList.toggle("dark-theme");
+                    break;
+                case "light":
+                    document.body.classList.toggle("light-theme");
+                    break;
+                default:
+                    document.body.classList.toggle("dark-theme");
+                    break;                        
+            }
+        };
+    </script>
     <script>
         window.onload = ()=> {
             const lang = navigator.language.toLowerCase();
