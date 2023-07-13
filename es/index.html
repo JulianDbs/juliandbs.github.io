@@ -1,20 +1,300 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Español</title>
+        <meta name="color-scheme" content="light dark"></meta>
+        <link href="/styles/style.css" rel="stylesheet" type="text/css">
+        <link href="/icons/icon.png" rel="icon" type="image/png">
+        <title>Portafolio</title>
     </head>
     <body>
-        <header></header>
-        <nav></nav>
-        <main>
-            <h1>Español</h1>
+        <header class="home__header" id="header-bar">
+            <h1 class="home-header__h1" >Portafolio</h1>
+        </header>
+        <nav class="home__nav" id="nav-bar">
+            <ul class="home-nav__ul">
+                <button class="home-nav__b" style="width:40px; height:40px;" id="home-nav-theme-button"></button>
+                <hr class="home-nav__hr"/>
+                <a href="#about-me" class="home-nav__a">Acerca de Mi</a>
+                <hr class="home-nav__hr"/>
+                <a href="#services" class="home-nav__a">Servicios</a>
+                <hr class="home-nav__hr"/>
+                <a href="#tech" class="home-nav__a">Skills</a>
+                <hr class="home-nav__hr"/>
+                <a href="#projects" class="home-nav__a">Proyectos</a>
+                <hr class="home-nav__hr"/>
+                <a href="#jobs" class="home-nav__a">Trabajos</a>
+                <hr class="home-nav__hr"/>
+                <a href="#contact" class="home-nav__a">Contacto</a>
+                <hr class="home-nav__hr"/>
+                <div class="home-nav__div-lang">
+                    <a class="home-nav__a-lang" href="/en/">ingles</a>
+                    <p class="home-nav__p-lang"> | </p>
+                    <a class="home-nav__a-lang" href="/es/">español</a>
+                </div>
+            </ul>        
+            <ul class="home-nav__ul-mobile" style="display: none;">
+                <button class="home-nav-mobile__b" style="width:40px; height:40px;" id="home-nav-mobile-theme-button"></button>
+                <div class="home-nav-mobile__div-lang">
+                    <a class="home-nav-mobile__a-lang" href="/en/">ingles</a>
+                    <p class="home-nav-mobile__p-lang"> | </p>
+                    <a class="home-nav-mobile__a-lang" href="/es/">español</a>
+                </div>
+                <div class="home-nav-ul-mobile__div-b" id="home-nav-bar-ul-mobile-button">
+                    <p class="home-nav-ul-mobile__p">| | |</p>
+                </div>
+                <div class="home-nav-ul-mobile__div-background" style="display: none;" id="home-nav-ul-mobile-menu-background" onclick="closeMobileMenu()"></div>
+                <div class="home-nav-ul-mobile__div" style="display: none;" id="home-nav-ul-mobile-menu">
+                    <a href="#about-me" class="home-nav-ul-mobile__a" onclick="closeMobileMenu()">Acerca de Mi</a>
+                    <a href="#services" class="home-nav-ul-mobile__a" onclick="closeMobileMenu()">Servicios</a>
+                    <a href="#tech" class="home-nav-ul-mobile__a" onclick="closeMobileMenu()">Skills</a>
+                    <a href="#projects" class="home-nav-ul-mobile__a" onclick="closeMobileMenu()">Proyectos</a>
+                    <a href="#jobs" class="home-nav-ul-mobile__a" onclick="closeMobileMenu()">Trabajos</a>
+                    <a href="#contact" class="home-nav-ul-mobile__a" onclick="closeMobileMenu()">Contacto</a>
+                </div>
+                <script>
+                    const navBar = document.getElementById("nav-bar");
+                    const navBarOffset = navBar.offsetTop;
+                    window.onscroll = function() {
+                        if (window.pageYOffset >  navBarOffset) {
+                            navBar.classList.add("sticky-nav-bar");
+                        } else {
+                            navBar.classList.remove("sticky-nav-bar");
+                        }
+                    };
+                    const themeButton = document.getElementById("home-nav-theme-button");
+                    themeButton.addEventListener("click", function() {
+                        let currentTheme = localStorage.getItem("theme");
+                        switch (currentTheme) {
+                            case "dark":
+                                localStorage.setItem("theme", "light");
+                                location.reload();
+                                break;
+                            case "light":
+                                localStorage.setItem("theme", "dark");
+                                location.reload();
+                                break;
+                        }
+                    });
+                    const mobileThemeButton = document.getElementById("home-nav-mobile-theme-button");
+                    mobileThemeButton.addEventListener("click", function() {
+                        let currentTheme = localStorage.getItem("theme");
+                        switch (currentTheme) {
+                            case "dark":
+                                localStorage.setItem("theme", "light");
+                                location.reload();
+                                break;
+                            case "light":
+                                localStorage.setItem("theme", "dark");
+                                location.reload();
+                                break;
+                        }
+                    });
+                </script>
+
+            </ul>
+        </nav>
+        <main class="home__main">
+            
+            <section class="home__section about-me__section" id="about-me">
+                <div class="home-section__div-t">
+                    <h1 class="home-section__h1">Acerca de Mi</h1>
+                </div>
+                <article class="home-section__article home-about-me__article">
+                    <p class="about-me-article__p">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+                    </p>
+                </article>
+            </section>
+
+            <section class="home__section home-services__section" id="services">
+                <div class="home-section__div-t">
+                    <h1 class="home-section__h1">Servicios</h1>
+                </div>
+                <article class="home-section__article home-services__article">
+                    <div class="services-article__div">
+                        <img class="services-article__img" src="/logos/api-development-logo.png"></img>
+                        <h1 class="services_article__h1">Desarrollo de Api</h1>
+                    </div>
+                    <div class="services-article__div">
+                        <img class="services-article__img" src="/logos/web-app-development-logo.png"></img>
+                        <h1 class="services_article__h1">Aplicaciónes Web</h1>
+                    </div>
+                    <div class="services-article__div">
+                        <img class="services-article__img" src="/logos/database-development-logo.png"></img>
+                        <h1 class="services_article__h1">Bases de Datos</h1>
+                    </div>
+                    <div class="services-article__div">
+                        <img class="services-article__img" src="/logos/web-store-development-logo.png"></img>
+                        <h1 class="services_article__h1">Tiendas Online</h1>
+                    </div>
+                </article>
+            </section>
+
+            <section class="home__section" id="tech">
+                <article class="home-section__article home-tech__article">
+                    <div class="tech-article__div-h1">
+                        <h1 class="tech-article__h1">Skills</h1>
+                    </div>
+                    <div class="tech-article__div">
+                        <picture class="tech-article__picture">
+                            <img src="/logos/java-logo.png" style="width: 250px; height: 300px;" class="tech-article__img">
+                        </picture>
+                        <picture class="tech-article__picture">
+                            <img src="/logos/html-logo.png" style="width: 250px; height: 300px;" class="tech-article__img">
+                        </picture>
+                        <picture class="tech-article__picture">
+                            <img src="/logos/css-logo.png" style="width: 250px; height: 300px;" class="tech-article__img">
+                        </picture>
+                        <picture class="tech-article__picture">
+                            <img src="/logos/sql-logo.png" style="width: 250px; height: 300px;" class="tech-article__img">
+                        </picture>
+                        <picture class="tech-article__picture">
+                            <img src="/logos/spring-logo.png" style="width: 250px; height: 300px;" class="tech-article__img">
+                        </picture>
+                        <picture class="tech-article__picture">
+                            <img src="/logos/thymeleaf-logo.png" style="width: 250px; height: 300px;" class="tech-article__img">
+                        </picture>
+                        <picture class="tech-article__picture">
+                            <img src="/logos/ubuntu-logo.png" style="width: 250px; height: 300px;" class="tech-article__img">
+                        </picture>
+                        <picture class="tech-article__picture">
+                            <img src="/logos/git-logo.png" style="width: 250px; height: 300px;" class="tech-article__img">
+                        </picture>
+                        <picture class="tech-article__picture">
+                            <img src="/logos/gradle-logo.png" style="width: 250px; height: 300px;" class="tech-article__img">
+                        </picture>
+                    </div>
+                    <div class="tech-article__div-h1">
+                        <h1 class="tech-article__h1">Tecnologías que quiero aprender</h1>
+                    </div>
+                    <div class="tech-article__div">
+                        <picture class="tech-article__picture">
+                            <img src="/logos/docker-logo.png" style="width: 250px; height: 300px;" class="tech-article__img">
+                        </picture>
+                        <picture class="tech-article__picture">
+                            <img src="/logos/python-logo.png" style="width: 250px; height: 300px;" class="tech-article__img">
+                        </picture>
+                        <picture class="tech-article__picture">
+                            <img src="/logos/bootstrap-logo.png" style="width: 250px; height: 300px;" class="tech-article__img">
+                        </picture>
+                        <picture class="tech-article__picture">
+                            <img src="/logos/javascript-logo.png" style="width: 250px; height: 300px;" class="tech-article__img">
+                        </picture>
+                        <picture class="tech-article__picture">
+                            <img src="/logos/maven-logo.png" style="width: 250px; height: 300px;" class="tech-article__img">
+                        </picture>
+                    </div>
+                </article>
+            </section>
+    
+            <section class="home__section" id="projects">
+                <div class="home-section__div-t">
+                    <h1 class="home-section__h1">Proyectos</h1>
+                </div>
+                <div class="projects-section__div">
+                    <article class="home-section__article home-projects__article">
+                        <a href="/es/project/beerfindernz/" class="home-projects-article__a">
+                            <h1 class="projects-article__h1" >BeerfinderNZ</h1>
+                            <picture class="projects-article__picture">
+                                <img class="projects-article__img" src="/logos/beerfindernz-logo.png" style="width: 800px; height: auto;">
+                            </picture>
+                        </a>
+                    </article>
+                    <article class="home-section__article home-projects__article">
+                        <a href="/es/project/shareyourfiles/" class="home-projects-article__a">
+                            <h1 class="projects-article__h1">ShareYourFiles</h1>
+                            <picture class="projects-article__picture">
+                                <img class="projects-article__img" src="/logos/share-your-files-logo.png" style="width: 800px; height: auto;">
+                            </picture>
+                        </a>
+                    </article>
+                </div>
+            </section>
+    
+            <section class="home__section home-jobs__section" id="jobs">
+                <div class="home-section__div-t">
+                    <h1 class="home-section__h1">Trabajos</h1>
+                </div>
+                <div class="jobs-section__div">
+                    <article class="home-section__article home-jobs__article">
+                        <a href="/es/job/teostore/" class="home-jobs-article__a">
+                            <h1 class="jobs-article__h1">TeoStore</h1>
+                            <picture class="jobs-article__picture">
+                                <img class="projects-article__img" src="/logos/teostore-logo.png" style="width: 800px; height: auto;">
+                            </picture>
+                        </a>
+                    </article>
+                    <article class="home-section__article home-jobs__article">
+                        <a href="/es/job/storeproducttable/" class="home-jobs-article__a">
+                            <h1 class="jobs-article__h1">StoreProductTable</h1>
+                            <picture class="jobs-article__picture">
+                                <img class="projects-article__img" src="/logos/store-product-table-logo.png" style="width: 800px; height: 450px;">
+                            </picture>
+                        </a>
+                    </article>
+                </div>
+            </section>
+
+            <section class="home__section contact__section" id="contact">
+                <div class="home-section__div-t">
+                    <h1 class="home-section__h1">Contacto</h1>
+                </div>
+                <article class="home-section__article social-links__article">
+                    <h1 class="social-links-article__h1">Redes Sociales</h1>
+                    <div class="social-links-article__div">
+                        <a class="social-links-article__a" href="/">
+                            <img class="social-links-article__img" src="/logos/linkedin-logo.png" style="width: 80px; height: 80px;">
+                        </a>
+                        <a class="social-links-article__a" href="/">
+                            <img class="social-links-article__img" src="/logos/github-logo.png" style="width: 80px; height: 80px;">
+                        </a>
+                    </div>
+                </article>
+            </section>
         </main>
-        <footer></footer>
+        <footer class="home__footer">
+            <div class="home-footer__div">
+                <p class="home-footer__p">Desarrollado por JulianDbs</p>
+            </div>
+        </footer>
         <script>
-            const lang = navigator.language.toLowerCase();
-            console.log("lang : " + lang);
+            const button = document.getElementById("home-nav-bar-ul-mobile-button");
+            const menuMobile = document.getElementById("home-nav-ul-mobile-menu");
+            const menuMobileBackground = document.getElementById("home-nav-ul-mobile-menu-background");
+            button.addEventListener("click", function() {
+                button.classList.toggle("ul-mobile__pressed");
+                menuMobile.classList.toggle("show-mobile-menu");
+                menuMobileBackground.classList.toggle("show-mobile-menu");
+            });
+            function closeMobileMenu() {
+                button.classList.toggle("ul-mobile__pressed");
+                menuMobile.classList.toggle("show-mobile-menu");
+                menuMobileBackground.classList.toggle("show-mobile-menu");
+            }
         </script>
 
+        <script>
+            window.onload = function() {
+                const currentTheme = localStorage.getItem("theme");
+                if (currentTheme == null ||  currentTheme != "dark" && currentTheme != "light") {
+                    localStorage.setItem("theme", "light");
+                }
+                switch (localStorage.getItem("theme")) {
+                    case "dark":
+                        document.body.classList.toggle("dark-theme");
+                        break;
+                    case "light":
+                        document.body.classList.toggle("light-theme");
+                        break;
+                    default:
+                        document.body.classList.toggle("dark-theme");
+                        break;                        
+                }
+            };
+        </script>
     </body>
 </html>
