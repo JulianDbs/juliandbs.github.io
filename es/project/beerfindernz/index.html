@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="color-scheme" content="light dark"></meta>
+        <link href="/styles/style.css" rel="stylesheet" type="text/css">
+        <link href="/icons/icon.png" rel="icon" type="image/png">
+        <title>BeerFinderNZ</title>
+    </head>
+    <body>
+        <header class="project__header" id="header-bar">
+            <h1 class="project-header__h1">BeerFinderNZ</h1>
+        </header>
+        <nav class="project__nav" id="nav-bar">
+            <ul class="project-nav__ul">
+                <button class="project-nav__b" style="width:40px; height:40px;" id="project-nav-theme-button"></button>
+                <hr class="project-nav__hr"/>
+                <a href="/es/" class="home-nav__a">Inicio</a>
+                <hr class="project-nav__hr"/>
+                <div class="project-nav__div-lang">
+                    <a class="project-nav__a-lang" href="/en/project/beerfindernz/">ingles</a>
+                    <p class="project-nav__p-lang"> | </p>
+                    <a class="project-nav__a-lang" href="/es/project/beerfindernz/">español</a>
+                </div>
+            </ul>
+            <ul class="project-nav__ul-mobile" style="display: none;">
+                <button class="project-nav-mobile__b" style="width:40px; height:40px;" id="project-nav-mobile-theme-button"></button>
+                <div class="project-nav-mobile__div-lang">
+                    <a class="project-nav-mobile__a-lang" href="/en/project/beerfindernz/">ingles</a>
+                    <p class="project-nav-mobile__p-lang"> | </p>
+                    <a class="project-nav-mobile__a-lang" href="/es/project/beerfindernz/">español</a>
+                </div>
+                <div class="project-nav-ul-mobile__div-b" id="project-nav-bar-ul-mobile-button">
+                    <p class="project-nav-ul-mobile__p">| | |</p>
+                </div>
+                <div class="project-nav-ul-mobile__div-background" style="display: none;" id="project-nav-ul-mobile-menu-background" onclick="closeMobileMenu()"></div>
+                <div class="project-nav-ul-mobile__div" style="display: none;" id="project-nav-ul-mobile-menu">
+                    <a href="/es/" class="project-nav-ul-mobile__a" onclick="closeMobileMenu()">Inicio</a>
+                </div>
+                <script>
+                    const navBar = document.getElementById("nav-bar");
+                    const navBarOffset = navBar.offsetTop;
+                    window.onscroll = function() {
+                        if (window.pageYOffset >  navBarOffset) {
+                            navBar.classList.add("sticky-nav-bar");
+                        } else {
+                            navBar.classList.remove("sticky-nav-bar");
+                        }
+                    };
+                    const themeButton = document.getElementById("project-nav-theme-button");
+                    themeButton.addEventListener("click", function() {
+                        let currentTheme = localStorage.getItem("theme");
+                        switch (currentTheme) {
+                            case "dark":
+                                localStorage.setItem("theme", "light");
+                                location.reload();
+                                break;
+                            case "light":
+                                localStorage.setItem("theme", "dark");
+                                location.reload();
+                                break;
+                        }
+                    });
+                    const mobileThemeButton = document.getElementById("project-nav-mobile-theme-button");
+                    mobileThemeButton.addEventListener("click", function() {
+                        let currentTheme = localStorage.getItem("theme");
+                        switch (currentTheme) {
+                            case "dark":
+                                localStorage.setItem("theme", "light");
+                                location.reload();
+                                break;
+                            case "light":
+                                localStorage.setItem("theme", "dark");
+                                location.reload();
+                                break;
+                        }
+                    });
+                </script>
+            </ul>
+        </nav>
+        <main class="project__main">
+            <section class="project__section">
+                <article class="project__article">
+                    <div class="project-article__div">
+                        <picture class="project-article-div__picture-logo">
+                            <img class="project-article-div__img-logo" src="/logos/beerfindernz-logo.png" style="width:800px; height: 450px;">
+                        </picture>
+                        <h1 class="project-article__h1">BeerFinderNZ</h1>
+                    </div>
+                    <div class="project-article__div-ig">
+                        <button class="project-article-div-ig__button-l" id="project-article-div-ig-button-l">&#60; </button>
+                        <div class="project-article-div-ig__div-image">
+                            <picture class="project-article-div-ig-div-image__picture" id="product-article-div-ig-div-image-picture-0">
+                                <img class="project-article-div-ig-div-image__img" style="width: 1336px; height: auto;" src="/screenshots/beerfindernz-0.jpg">
+                            </picture>
+                            <picture class="project-article-div-ig-div-image__picture" style="display:none;" id="product-article-div-ig-div-image-picture-1">
+                                <img class="project-article-div-ig-div-image__img" style="width: 1336px; height: auto;" src="/screenshots/beerfindernz-1.jpg">
+                            </picture>
+                            <picture class="project-article-div-ig-div-image__picture" style="display:none;" id="product-article-div-ig-div-image-picture-2">
+                                <img class="project-article-div-ig-div-image__img" style="width: 1336px; height: auto;" src="/screenshots/beerfindernz-2.jpg">
+                            </picture>
+                            <picture class="project-article-div-ig-div-image__picture" style="display:none;" id="product-article-div-ig-div-image-picture-3">
+                                <img class="project-article-div-ig-div-image__img" style="width: 1336px; height: auto;" src="/screenshots/beerfindernz-3.jpg">
+                            </picture>
+                            <picture class="project-article-div-ig-div-image__picture" style="display:none;" id="product-article-div-ig-div-image-picture-4">
+                                <img class="project-article-div-ig-div-image__img" style="width: 1336px; height: auto;" src="/screenshots/beerfindernz-4.jpg">
+                            </picture>
+                            <picture class="project-article-div-ig-div-image__picture" style="display:none;" id="product-article-div-ig-div-image-picture-5">
+                                <img class="project-article-div-ig-div-image__img" style="width: 1336px; height: auto;" src="/screenshots/beerfindernz-5.jpg">
+                            </picture>
+                            <picture class="project-article-div-ig-div-image__picture" style="display:none;" id="product-article-div-ig-div-image-picture-6">
+                                <img class="project-article-div-ig-div-image__img" style="width: 1336px; height: auto;" src="/screenshots/beerfindernz-6.jpg">
+                            </picture>
+                            <picture class="project-article-div-ig-div-image__picture" style="display:none;" id="product-article-div-ig-div-image-picture-7">
+                                <img class="project-article-div-ig-div-image__img" style="width: 1336px; height: auto;" src="/screenshots/beerfindernz-7.jpg">
+                            </picture>
+                            <picture class="project-article-div-ig-div-image__picture" style="display:none;" id="product-article-div-ig-div-image-picture-8">
+                                <img class="project-article-div-ig-div-image__img" style="width: 1336px; height: auto;" src="/screenshots/beerfindernz-8.jpg">
+                            </picture>
+                            <picture class="project-article-div-ig-div-image__picture" style="display:none;" id="product-article-div-ig-div-image-picture-9">
+                                <img class="project-article-div-ig-div-image__img" style="width: 1336px; height: auto;" src="/screenshots/beerfindernz-9.jpg">
+                            </picture>
+                            <picture class="project-article-div-ig-div-image__picture" style="display:none;" id="product-article-div-ig-div-image-picture-10">
+                                <img class="project-article-div-ig-div-image__img" style="width: 1336px; height: auto;"src="/screenshots/beerfindernz-10.jpg">
+                            </picture>
+                        </div>
+                        <button class="project-article-div-ig__button-r" id="project-article-div-ig-button-r">&#62;</button>
+                        <script>
+                            let imageCount = 0;
+                            const igButtonL = document.getElementById("project-article-div-ig-button-l");
+                            const imageList = [
+                                document.getElementById("product-article-div-ig-div-image-picture-0"),
+                                document.getElementById("product-article-div-ig-div-image-picture-1"),
+                                document.getElementById("product-article-div-ig-div-image-picture-2"),
+                                document.getElementById("product-article-div-ig-div-image-picture-3"),
+                                document.getElementById("product-article-div-ig-div-image-picture-4"),
+                                document.getElementById("product-article-div-ig-div-image-picture-5"),
+                                document.getElementById("product-article-div-ig-div-image-picture-6"),
+                                document.getElementById("product-article-div-ig-div-image-picture-7"),
+                                document.getElementById("product-article-div-ig-div-image-picture-8"),
+                                document.getElementById("product-article-div-ig-div-image-picture-9"),
+                                document.getElementById("product-article-div-ig-div-image-picture-10")
+                            ];
+                            igButtonL.addEventListener("click", function() {
+                                if (imageCount > 0) {
+                                    imageCount -= 1;
+                                    showImageOnGallery(imageCount);
+                                }
+                            });
+                            const igButtonR = document.getElementById("project-article-div-ig-button-r");
+                            igButtonR.addEventListener("click", function() {
+                                if (imageCount < 10) {
+                                    imageCount += 1;
+                                    showImageOnGallery(imageCount);
+                                }
+                            });
+                            function showImageOnGallery(imageNumber) {
+                                for (let i = 0; i < imageList.length; i++) {
+                                    if (i == imageNumber) {
+                                        imageList[i].style.display = "flex";
+                                    } else {
+                                        imageList[i].style.display = "none";
+                                    }
+                                }
+                            }
+                        </script>
+                    </div>
+                    <div class="project-article__div-info">
+                        <div class="project-article-div-info__div-links">
+                            <a class="social-links-article__a" href="https://github.com/JulianDbs/BeerFinderNZ">
+                                <img class="social-links-article__img" src="/logos/github-logo.png" style="width: 80px; height: 80px;">
+                            </a>
+                        </div>
+                        <p class="project-article-div-info__p">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+                        </p>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <footer class="project__footer">
+            <div class="project-footer__div">
+                <p class="project-footer__p">Desarollado por JulianDbs</p>
+            </div>
+        </footer>
+
+        <script>
+            const button = document.getElementById("project-nav-bar-ul-mobile-button");
+            const menuMobile = document.getElementById("project-nav-ul-mobile-menu");
+            const menuMobileBackground = document.getElementById("project-nav-ul-mobile-menu-background");
+            button.addEventListener("click", function() {
+                button.classList.toggle("ul-mobile__pressed");
+                menuMobile.classList.toggle("show-mobile-menu");
+                menuMobileBackground.classList.toggle("show-mobile-menu");
+            });
+            function closeMobileMenu() {
+                button.classList.toggle("ul-mobile__pressed");
+                menuMobile.classList.toggle("show-mobile-menu");
+                menuMobileBackground.classList.toggle("show-mobile-menu");
+            }
+        </script>
+        
+        <script>
+            window.onload = function() {
+                const currentTheme = localStorage.getItem("theme");
+                if (currentTheme == null ||  currentTheme != "dark" && currentTheme != "light") {
+                    localStorage.setItem("theme", "light");
+                }
+                switch (localStorage.getItem("theme")) {
+                    case "dark":
+                        document.body.classList.toggle("dark-theme");
+                        break;
+                    case "light":
+                        document.body.classList.toggle("light-theme");
+                        break;
+                    default:
+                        document.body.classList.toggle("dark-theme");
+                        break;                        
+                }
+            };
+        </script>
+    </body>
+</html>
