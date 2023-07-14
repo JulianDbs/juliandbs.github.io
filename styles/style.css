@@ -19,7 +19,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-    body {
+    body.dark-theme {
         --primary-color: var(--primary-color-dark);
         --secondary-color: var(--secondary-color-dark);
         --tertiary-color: var(--tertiary-color-dark);
