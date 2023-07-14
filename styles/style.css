@@ -862,7 +862,7 @@ header, section, article, div {
     }
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1310px) {
     .job-nav__ul,
     .project-nav__ul,
     .home-nav__ul {
