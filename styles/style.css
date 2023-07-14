@@ -361,11 +361,18 @@ header, section, article, div {
 
 .job__main,
 .project__main,
-.home__main {
+.home__main,
+.start__main {
     display: flex;
     flex-direction: column;
     height: 100%;
     min-height: calc(100vh - calc( var(--header-height) + var(--nav-height) ) - 150px);
+}
+
+.start__main {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .home__section {
@@ -832,6 +839,50 @@ header, section, article, div {
     background-color: var(--background-secondary-color);
 }
 
+.start-loading-div {
+    width: 450px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.start-loading-div-circle-a,
+.start-loading-div-circle-b {
+    position: absolute;
+    border-radius: 50%;
+    border: 30px solid var(--border-tertiary-color);
+}
+  
+.start-loading-div-circle-a {
+    width: 300px;
+    height: 300px;
+    animation: spin-a 2s linear infinite;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    z-index: 3;
+}
+
+.start-loading-div-circle-b {
+    width: 180px;
+    height: 180px;
+    animation: spin-b 2s linear infinite;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    z-index: 2;
+}
+
+@keyframes spin-a {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-b {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+}
+
+
 @media (max-width: 1750px) {
     .tech-article__div {
         grid-template-columns: auto auto auto auto auto;
@@ -1049,6 +1100,34 @@ header, section, article, div {
     .project-footer__p,
     .home-footer__p {
         font-size: 4vw;
+    }
+
+    .start-loading-div {
+        width: 80vw;
+        height: 80vw;
+    }
+
+    .start-loading-div-circle-a,
+    .start-loading-div-circle-b {
+        border: 25px solid var(--border-tertiary-color);
+    }
+
+    .start-loading-div-circle-a {
+        width: 70vw;
+        height: 70vw;
+        animation: spin-a 2s linear infinite;
+        border-top: 25px solid transparent;
+        border-bottom: 25px solid transparent;
+        z-index: 3;
+    }
+    
+    .start-loading-div-circle-b {
+        width: 30vw;
+        height: 30vw;
+        animation: spin-b 2s linear infinite;
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+        z-index: 2;
     }
 }
 
